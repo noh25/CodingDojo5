@@ -17,10 +17,10 @@ namespace CodingDojo5_Hava.ViewModel
 
         Messenger messenger = SimpleIoc.Default.GetInstance<Messenger>();
 
-        public WishListVM()
+        /*public WishListVM()
         {
             Items = new ObservableCollection<ItemVM>();
             //messenger.Register<PropertyChangedMessage<ItemVM>>(this, updateList);
-        }
+        }*/
     }
 }

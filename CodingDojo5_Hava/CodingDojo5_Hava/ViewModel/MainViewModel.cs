@@ -1,4 +1,8 @@
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.CommandWpf;
+using System.Collections.ObjectModel;
+using System;
+using System.Windows.Media.Imaging;
 
 namespace CodingDojo5_Hava.ViewModel
 {
@@ -16,19 +20,69 @@ namespace CodingDojo5_Hava.ViewModel
     /// </summary>
     public class MainViewModel : ViewModelBase
     {
-        /// <summary>
-        /// Initializes a new instance of the MainViewModel class.
-        /// </summary>
+        private ItemVM category;
+        private RelayCommand<ItemVM> btnBuyClick;
+
+        public ObservableCollection<ItemVM> Items { get; set; }
+        public ObservableCollection<ItemVM> WishList { get; set; }
+
+        public ItemVM Category
+        {
+            get { return category; }
+            set { category = value;
+                  RaisePropertyChanged();
+            }
+        }
+
+        public RelayCommand<ItemVM> BtnBuyClick
+        {
+            get
+            {
+                return btnBuyClick;
+            }
+            set
+            {
+                btnBuyClick = value;
+                RaisePropertyChanged();
+            }
+        }
+
         public MainViewModel()
         {
-            ////if (IsInDesignMode)
-            ////{
-            ////    // Code runs in Blend --> create design time data.
-            ////}
-            ////else
-            ////{
-            ////    // Code runs "for real"
-            ////}
+            WishList = new ObservableCollection<ItemVM>();
+
+            BtnBuyClick = new RelayCommand<ItemVM>((p) => 
+            {
+                WishList.Add(p);
+            }, (p) => { return true; });
+            Items = new ObservableCollection<ItemVM>();
+            GenerateDemoData();
+        }
+
+        private void GenerateDemoData()
+        {
+            Items.Add(new ItemVM("MY Lego", new BitmapImage(new Uri("Images/lego1.jpg", UriKind.Relative)), "-"));
+            Items.Add(new ItemVM("MY Playmobil", new BitmapImage(new Uri("Images/playmobil1.jpg", UriKind.Relative)), "-"));
+            Items[Items.Count - 1].AddItem(
+                new ItemVM("Playmobil 2", new BitmapImage(new Uri("Images/playmobil2.jpg", UriKind.Relative)), "5+"));
+            Items[Items.Count - 1].AddItem(
+                new ItemVM("Playmobil 3", new BitmapImage(new Uri("Images/playmobil3.jpg", UriKind.Relative)), "10+"));
+            Items[Items.Count - 1].AddItem(
+               new ItemVM("Playmobil 2", new BitmapImage(new Uri("Images/playmobil2.jpg", UriKind.Relative)), "5+"));
+            Items[Items.Count - 1].AddItem(
+                new ItemVM("Playmobil 3", new BitmapImage(new Uri("Images/playmobil3.jpg", UriKind.Relative)), "10+"));
+            Items[Items.Count - 1].AddItem(
+               new ItemVM("Playmobil 2", new BitmapImage(new Uri("Images/playmobil2.jpg", UriKind.Relative)), "5+"));
+            Items[Items.Count - 1].AddItem(
+                new ItemVM("Playmobil 3", new BitmapImage(new Uri("Images/playmobil3.jpg", UriKind.Relative)), "10+"));
+            Items[Items.Count - 1].AddItem(
+               new ItemVM("Playmobil 2", new BitmapImage(new Uri("Images/playmobil2.jpg", UriKind.Relative)), "5+"));
+            Items[Items.Count - 1].AddItem(
+                new ItemVM("Playmobil 3", new BitmapImage(new Uri("Images/playmobil3.jpg", UriKind.Relative)), "10+"));
+            Items[Items.Count - 1].AddItem(
+               new ItemVM("Playmobil 2", new BitmapImage(new Uri("Images/playmobil2.jpg", UriKind.Relative)), "5+"));
+            Items[Items.Count - 1].AddItem(
+                new ItemVM("Playmobil 3", new BitmapImage(new Uri("Images/playmobil3.jpg", UriKind.Relative)), "10+"));
         }
     }
 }

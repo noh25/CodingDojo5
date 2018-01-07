@@ -75,9 +75,6 @@
     <Compile Include="ViewModel\MyPlaymobilVM.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="ViewModel\WishlistVM.cs" />
-    <Compile Include="Views\MyLegoView.xaml.cs">
-      <DependentUpon>MyLegoView.xaml</DependentUpon>
-    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -90,10 +87,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\MyLegoView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -122,6 +115,17 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\lego1.jpg" />
+    <Resource Include="Images\lego2.jpg" />
+    <Resource Include="Images\lego3.jpg" />
+    <Resource Include="Images\lego4.jpg" />
+    <Resource Include="Images\playmobil1.jpg" />
+    <Resource Include="Images\playmobil2.jpg" />
+    <Resource Include="Images\playmobil3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

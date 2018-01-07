@@ -25,9 +25,9 @@ namespace CodingDojo5_Hava.ViewModel
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
             SimpleIoc.Default.Register<MainViewModel>();
-            SimpleIoc.Default.Register<MyLegoVM>();
-            SimpleIoc.Default.Register<MyPlaymobilVM>();
-            SimpleIoc.Default.Register<WishlistVM>();
+            //SimpleIoc.Default.Register<MyLegoVM>();
+            //SimpleIoc.Default.Register<MyPlaymobilVM>();
+            //SimpleIoc.Default.Register<WishlistVM>();
         }
 
         public MainViewModel Main
@@ -38,7 +38,7 @@ namespace CodingDojo5_Hava.ViewModel
             }
         }
 
-        public MyLegoVM MyLego
+        /*public MyLegoVM MyLego
         {
             get
             {
@@ -60,7 +60,7 @@ namespace CodingDojo5_Hava.ViewModel
             {
                 return ServiceLocator.Current.GetInstance<WishlistVM>();
             }
-        }
+        }*/
 
         public static void Cleanup()
         {
