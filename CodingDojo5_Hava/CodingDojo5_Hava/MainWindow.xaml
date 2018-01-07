@@ -59,12 +59,12 @@
                         <Border BorderBrush="Black" BorderThickness="2" CornerRadius="5" Width="220" Margin="5">
                             <StackPanel>
                                 <StackPanel Orientation="Horizontal">
-                                    <Image Source="{Binding Image}" Height="60" Margin="3"/>
+                                    <Image Source="{Binding ItemImage}" Height="60" Margin="3"/>
                                     <Label Content="{Binding Description}" VerticalAlignment="Center" Margin="5,0"/>
                                     <Label Content="{Binding AgeRecommendation}" FontSize="20" VerticalAlignment="Center" ></Label>
                                 </StackPanel>
                                 <Button Content="Buy" 
-                                        Command="{Binding DataContext.BuyBtnClickedCmd, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                                        Command="{Binding DataContext.BtnBuyClick, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
                                         CommandParameter="{Binding}"
                                         Height="35" Width="190" HorizontalAlignment="Center" Margin="3"/>
                             </StackPanel>

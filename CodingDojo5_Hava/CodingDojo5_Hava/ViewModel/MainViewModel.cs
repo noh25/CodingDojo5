@@ -61,7 +61,16 @@ namespace CodingDojo5_Hava.ViewModel
 
         private void GenerateDemoData()
         {
+            //Lego
             Items.Add(new ItemVM("MY Lego", new BitmapImage(new Uri("Images/lego1.jpg", UriKind.Relative)), "-"));
+
+            Items[Items.Count - 1].AddItem(
+                new ItemVM("Lego 2", new BitmapImage(new Uri("Images/lego2.jpg", UriKind.Relative)), "5+"));
+            Items[Items.Count - 1].AddItem(
+                new ItemVM("Lego 3", new BitmapImage(new Uri("Images/lego3.jpg", UriKind.Relative)), "10+"));
+            Items[Items.Count - 1].AddItem(
+               new ItemVM("Lego 4", new BitmapImage(new Uri("Images/lego4.jpg", UriKind.Relative)), "5+"));
+            //Playmobil
             Items.Add(new ItemVM("MY Playmobil", new BitmapImage(new Uri("Images/playmobil1.jpg", UriKind.Relative)), "-"));
             Items[Items.Count - 1].AddItem(
                 new ItemVM("Playmobil 2", new BitmapImage(new Uri("Images/playmobil2.jpg", UriKind.Relative)), "5+"));
